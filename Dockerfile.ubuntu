@@ -1,0 +1,7 @@
+ARG UBUNTU_VERSION=18.04
+FROM ubuntu:${UBUNTU_VERSION}
+ARG BUILD_UID=1000
+ARG BUILD_GID=1000
+COPY *.sh /tmp/configure/
+RUN bash /tmp/configure/create_user.sh
+RUN bash /tmp/configure/install_deps.sh
